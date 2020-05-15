@@ -1,0 +1,11 @@
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\bin\Release\netcoreapp2.2\Edvido.Integrations.Parasut.deps.json
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\bin\Release\netcoreapp2.2\Edvido.Integrations.Parasut.dll
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\bin\Release\netcoreapp2.2\Edvido.Integrations.Parasut.pdb
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\bin\Release\netcoreapp2.2\Edvido.Utilities.dll
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\obj\Release\netcoreapp2.2\Edvido.Integrations.Parasut.csprojAssemblyReference.cache
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\obj\Release\netcoreapp2.2\Edvido.Integrations.Parasut.csproj.CoreCompileInputs.cache
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\obj\Release\netcoreapp2.2\Edvido.Integrations.Parasut.AssemblyInfoInputs.cache
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\obj\Release\netcoreapp2.2\Edvido.Integrations.Parasut.AssemblyInfo.cs
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\obj\Release\netcoreapp2.2\Edvido.Integrations.Parasut.csproj.CopyComplete
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\obj\Release\netcoreapp2.2\Edvido.Integrations.Parasut.dll
+C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\obj\Release\netcoreapp2.2\Edvido.Integrations.Parasut.pdb

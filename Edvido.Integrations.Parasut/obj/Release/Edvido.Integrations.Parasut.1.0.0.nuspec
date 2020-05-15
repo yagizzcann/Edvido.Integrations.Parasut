@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Edvido.Integrations.Parasut</id>
+    <version>1.0.0</version>
+    <authors>Yağız Can</authors>
+    <owners>Yağız Can</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/yagizzcann/Edvido.Integrations.Parasut</projectUrl>
+    <description>.Net Core Integration helper for Parasut</description>
+    <releaseNotes>.Net Core Integration helper for Parasut</releaseNotes>
+    <tags>.Net Core Integration helper for Parasut</tags>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.2">
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
+        <dependency id="RestSharp" version="106.11.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Yagiz Can\Desktop\Integrations\parasut new\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut\bin\Release\netcoreapp2.2\Edvido.Integrations.Parasut.dll" target="lib\netcoreapp2.2\Edvido.Integrations.Parasut.dll" />
+  </files>
+</package>
