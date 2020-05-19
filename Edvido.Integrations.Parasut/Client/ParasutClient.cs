@@ -111,7 +111,7 @@
         {
             if (EdvidoRestClient == null)
                 GenerateEdvidoRestClient();
-            
+
             if (EdvidoRestClient == null)
                 return;
 
@@ -238,7 +238,7 @@
             ClientSecret = ParasutApiSettings.ClientSecret(clientSecret);
             Username = ParasutApiSettings.Username(username);
             Password = ParasutApiSettings.Password(password);
-            
+
             GenerateConfiguration();
 
 

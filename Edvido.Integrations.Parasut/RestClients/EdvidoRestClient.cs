@@ -17,7 +17,7 @@
         /// <summary>
         /// Defines the DecoratedClient.
         /// </summary>
-        protected RestSharp.RestClient DecoratedClient;
+        public RestSharp.RestClient DecoratedClient;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EdvidoRestClient"/> class.

@@ -1,6 +1,7 @@
 ﻿namespace Edvido.Integrations.Parasut.RestClients.Decorators
 {
     using Edvido.Integrations.Parasut.RestClients.Model;
+    using IdentityModel.Client;
     using RestSharp;
     using System;
     using System.Linq;
@@ -53,15 +54,39 @@
         /// </summary>
         private string _accessToken = null;
 
-        /// <summary>
-        /// Defines the _refreshToken.
-        /// </summary>
-        private string _refreshToken = null;
+
 
         /// <summary>
         /// Defines the _isExpired.
         /// </summary>
         private bool _isExpired = false;
+
+        /// <summary>
+        /// Defines the _tokenClient.
+        /// </summary>
+        private TokenClient _tokenClient;
+
+        /// <summary>
+        /// Gets the TokenClient.
+        /// </summary>
+        public TokenClient TokenClient
+        {
+            get
+            {
+                if (_tokenClient == null)
+                {
+                    lock (_syncLock)
+                    {
+                        if (_tokenClient == null)
+                        {
+                            _tokenClient = new TokenClient($"{_baseUrl}/{_tokenUrl}", _clientId, _clientSecret);
+                        }
+                    }
+                }
+
+                return _tokenClient;
+            }
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="OAuth2Decorator"/> class.
@@ -73,7 +98,7 @@
         /// <param name="tokenUrl">The tokenUrl<see cref="string"/>.</param>
         /// <param name="username">The username<see cref="string"/>.</param>
         /// <param name="password">The password<see cref="string"/>.</param>
-        public OAuth2Decorator(RestSharp.RestClient decoratedClient,
+        public OAuth2Decorator(RestClient decoratedClient,
                               string baseUrl,
                               string clientId,
                               string clientSecret,
@@ -487,7 +512,7 @@
                 {
                     if (_accessToken == null)
                     {
-                        GenerateNewAccessToken();
+                        GenerateNewAccessToken().Wait();
                     }
                 }
             }
@@ -506,7 +531,7 @@
                 {
                     if (_isExpired)
                     {
-                        GenerateRefreshToken();
+                        GenerateNewAccessToken().Wait();
                         _isExpired = false;
                     }
                 }
@@ -516,50 +541,18 @@
         /// <summary>
         /// The GenerateNewAccessToken.
         /// </summary>
-        private void GenerateNewAccessToken()
+        /// <returns>The <see cref="Task"/>.</returns>
+        private async Task GenerateNewAccessToken()
         {
+            TokenResponse tokenResult = await TokenClient.RequestCustomAsync(new OAuthTokenRequest(_clientId,
+                                                                                                   _clientSecret,
+                                                                                                   _userName,
+                                                                                                   _password)
+                                                                             ).ConfigureAwait(false);
 
-            var tokenResponse = new RestSharp.RestClient(_baseUrl).Execute<OAuthTokenResponse>(new RestRequest(_tokenUrl, Method.POST)
-                .AddQueryParameter("client_id", _clientId)
-                .AddQueryParameter("client_secret", _clientSecret)
-                .AddQueryParameter("username", _userName)
-                .AddQueryParameter("password", _password)
-                .AddQueryParameter("grant_type", "password")
-                .AddQueryParameter("redirect_uri", "urn:ietf:wg:oauth:2.0:oob")
-               )?.Data;
-            if (tokenResponse == null)
-                return;
-            _accessToken = tokenResponse.AccessToken;
-            _refreshToken = tokenResponse.RefreshToken;
-        }
-
-        /// <summary>
-        /// The GenerateRefreshToken.
-        /// </summary>
-        public void GenerateRefreshToken()
-        {
-            try
+            if (tokenResult.HttpStatusCode == HttpStatusCode.OK)
             {
-                var tokenResponse = new RestSharp.RestClient(_baseUrl).Execute<OAuthTokenResponse>(new RestRequest(_tokenUrl, Method.POST)
-                    .AddQueryParameter("client_id", this._clientId)
-                    .AddQueryParameter("client_secret", this._clientSecret)
-                    .AddQueryParameter("refresh_token", this._refreshToken)
-                     .AddQueryParameter("grant_type", "refresh_token")
-                )?.Data;
-
-                if (tokenResponse == null
-                    || String.IsNullOrWhiteSpace(tokenResponse.AccessToken)
-                    || String.IsNullOrWhiteSpace(tokenResponse.RefreshToken))
-                    return;
-
-                _accessToken = tokenResponse.AccessToken;
-                _refreshToken = tokenResponse.RefreshToken;
-
-
-            }
-            catch (Exception ex)
-            {
-                string error = ex.Message;
+                _accessToken = tokenResult.AccessToken;
             }
         }
     }

@@ -151,9 +151,9 @@ namespace Edvido.Integrations.Parasut.Client
 
 
 
-            InterceptRequest(request);
+           // InterceptRequest(request);
             var response = EdvidoRestClient.Execute(request);
-            InterceptResponse(request, response);
+           // InterceptResponse(request, response);
 
             return (Object)response;
         }
@@ -181,10 +181,10 @@ namespace Edvido.Integrations.Parasut.Client
             var request = PrepareRequest(
            path, method, queryParams, postBody, headerParams, formParams, fileParams,
            pathParams, contentType);
-            InterceptRequest(request);
+           // InterceptRequest(request);
 
             var response = await EdvidoRestClient.ExecuteTaskAsync(request);
-            InterceptResponse(request, response);
+         //   InterceptResponse(request, response);
             return (Object)response;
         }
 

@@ -1,20 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Yağız Can</Authors>
     <Company>Edvido</Company>
     <Description>.Net Core Integration helper for Parasut</Description>
     <PackageProjectUrl>https://github.com/yagizzcann/Edvido.Integrations.Parasut</PackageProjectUrl>
-    <PackageReleaseNotes>.Net Core Integration helper for Parasut</PackageReleaseNotes>
+    <PackageReleaseNotes>Compatiple with .Net Core 2.1</PackageReleaseNotes>
     <PackageTags>.Net Core Integration helper for Parasut</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="RestSharp" Version="106.11.3" />
-  </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Helper\" />
@@ -22,6 +18,12 @@
     <Folder Include="Dlls\" />
     <Folder Include="Client\" />
     <Folder Include="Api\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityModel" Version="3.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RestSharp" Version="106.11.3" />
   </ItemGroup>
 
   <ItemGroup>
