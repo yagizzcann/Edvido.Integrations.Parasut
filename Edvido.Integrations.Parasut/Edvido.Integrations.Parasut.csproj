@@ -7,9 +7,9 @@
     <Company>Edvido</Company>
     <Description>.Net Core Integration helper for Parasut</Description>
     <PackageProjectUrl>https://github.com/yagizzcann/Edvido.Integrations.Parasut</PackageProjectUrl>
-    <PackageReleaseNotes>Compatiple with .Net Core 2.1</PackageReleaseNotes>
+    <PackageReleaseNotes>Compatiple with .Net Standart 2.0</PackageReleaseNotes>
     <PackageTags>.Net Core Integration helper for Parasut</PackageTags>
-    <Version>1.0.1</Version>
+    <Version>2.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
