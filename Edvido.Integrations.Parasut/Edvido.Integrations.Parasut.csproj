@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Yağız Can</Authors>
     <Company>Edvido</Company>
@@ -13,17 +13,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Dlls\**" />
+    <EmbeddedResource Remove="Dlls\**" />
+    <None Remove="Dlls\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Helper\" />
     <Folder Include="Model\" />
-    <Folder Include="Dlls\" />
     <Folder Include="Client\" />
     <Folder Include="Api\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="IdentityModel" Version="3.0.0" />
+    <PackageReference Include="IdentityModel" Version="3.10.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="RestSharp" Version="106.11.3" />
+    <PackageReference Include="RestSharp" Version="106.11.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Edvido.Utilities\Edvido.Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
