@@ -53,11 +53,12 @@
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"Error: {ex.Message}");
             }
 
 
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Press any key to exit");
 
 
             Console.ReadLine();
