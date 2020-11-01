@@ -14,10 +14,4 @@
     <ProjectReference Include="..\Edvido.Integrations.Parasut\Edvido.Integrations.Parasut.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Edvido.Utilities">
-      <HintPath>..\Edvido.Integrations.Parasut\Dlls\Edvido.Utilities.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

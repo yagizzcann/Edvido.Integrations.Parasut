@@ -12,11 +12,11 @@ Now, it includes OAuth2Decorator for support refresh token and some bugs are fix
 
 Package Manager Console
 
-> Install-Package Edvido.Integrations.Parasut -Version 2.0.1
+> Install-Package Edvido.Integrations.Parasut -Version 2.0.2
 
 
 .NET CLI
 
-> dotnet add package Edvido.Integrations.Parasut --version 2.0.1
+> dotnet add package Edvido.Integrations.Parasut --version 2.0.2
 
 
