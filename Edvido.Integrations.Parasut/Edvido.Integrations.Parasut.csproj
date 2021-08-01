@@ -5,11 +5,11 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Yağız Can</Authors>
     <Company>Edvido</Company>
-    <Description>.Net Core Integration helper for Parasut</Description>
+    <Description>.Net Core Integration helper for Parasut API</Description>
     <PackageProjectUrl>https://github.com/yagizzcann/Edvido.Integrations.Parasut</PackageProjectUrl>
     <PackageReleaseNotes>Compatiple with .Net Standart 2.0</PackageReleaseNotes>
     <PackageTags>.Net Core Integration helper for Parasut</PackageTags>
-    <Version>2.0.2</Version>
+    <Version>2.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,7 +30,7 @@
     <PackageReference Include="IdentityModel" Version="3.10.10" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="RestSharp" Version="106.11.4" />
+    <PackageReference Include="RestSharp" Version="106.12.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
   </ItemGroup>
 
